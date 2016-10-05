@@ -1,0 +1,80 @@
+<div data-ng-controller="CustomerManageController as vm"  class="container-fluid "> 
+  <!-- Header -->
+  <div class="row" >
+    <div class="col-lg-2" ng-click="vm.gotoCustomerList()">
+       <span class="glyphicon glyphicon-remove text-left close-btn-position text-danger "></span>  
+    </div>
+    <div class="col-lg-8">        
+       <h3 class="row text-center app-fg-primary-dark-color">{{vm.title}} Customer</h3>
+    </div>  
+  </div>
+  <hr>
+  <!-- Customer Form -->
+  <div style="max-width:600px; margin-left:auto;margin-right:auto;">   
+    <form name="form" ng-submit="vm.register()" role="form">
+        <h5 class="app-fg-primary-dark-color">Personal Info</h5>
+        <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
+            <section ng-if="form.firstName.$touched && form.firstName.$invalid" style="float:right;color:#f00;">required First Name</section>
+            <h6 for="firstName" class="text-muted">First name</h6>         
+            <input type="text" name="firstName" id="firstName" class="form-control" ng-model="vm.selectedCustomer.firstName" required />           
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
+             <section ng-if="form.lastName.$touched && form.lastName.$invalid" style="float:right;color:#f00;">required Lirst Name</section>
+            <h6 for="lastName">Last name</h6>
+            <input type="text" name="lastName" id="lastName" class="form-control" ng-model="vm.selectedCustomer.lastName" required />           
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">           
+            <section ng-if="form.email.$touched && form.email.$invalid" style="float:right;color:#f00;">required valid Email</section>
+             <h6 for="email">Email</h6>
+            <input type="email" name="email" id="email" class="form-control" ng-model="vm.selectedCustomer.email"  required /> 
+        </div>
+        <div class="form-group" >
+            <section ng-if="form.phoneNumber.$touched && form.phoneNumber.$invalid" style="float:right;color:#f00;">required valid 10 digit Phone number</section>
+            <h6 for="phoneNumber">Phone Number (Optional</h6>
+            <input type="text" name="phoneNumber" id="phoneNumber" pattern="[0-9]{10}"  class="form-control" 
+                   ng-model="vm.selectedCustomer.phoneNumber"  />           
+        </div>
+        
+        <hr>
+        <h5 class="app-fg-primary-dark-color">Address (Optional)</h5>
+        
+        <div class="form-group" >
+            <h6 for="addrLine1">Address Line1</h6>
+            <input type="text" name="addrLine1" id="addrLine1" class="form-control" ng-model="vm.selectedCustomer.addrLine1"  />            
+        </div>
+        <div class="form-group" >
+            <h6 for="addrLine2">Address Line 2</h6>
+            <input type="text" name="addrLine2" id="addrLine2" class="form-control" ng-model="vm.selectedCustomer.addrLine2"  />            
+        </div>
+        
+       
+        <div class="form-group" >
+            <h6 for="city">City</h6>
+            <input type="text" name="city" id="city" class="form-control" ng-model="vm.selectedCustomer.city"  />            
+        </div>
+       
+        <div class="form-group" >
+            <h6 for="state">State</h6>
+            <input type="text" name="state" id="state" class="form-control" ng-model="vm.selectedCustomer.state"  />            
+        </div>
+          
+            <div class="form-group" >
+            <h6 for="zipcode">Zip code</h6>
+            <input type="text" name="zipcode" id="zipcode" class="form-control" ng-model="vm.selectedCustomer.zipcode"  />            
+          </div>
+       
+               
+        <div class="form-actions clearfix">
+          <button type="submit" class="btn pull-right clear" 
+                     ng-disabled="form.$invalid" ng-click="vm.addCustomer()">
+              <span class="glyphicon glyphicon-floppy-disk text-success "></span> Save Customer
+          </button>
+          <button type="submit" class="btn btn-danger pull-right clear" 
+                      ng-click="vm.gotoCustomerList()">
+              <span class="glyphicon glyphicon-remove  "></span> Cancel
+          </button>
+        </div>         
+    </form>
+  </div>  
+</div>
+

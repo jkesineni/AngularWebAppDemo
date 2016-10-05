@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html data-ng-app="customerapp">
+<head>
+  <title>Sample Demo</title>
+    
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+  <!--
+    Animate.css - http://daneden.me/animate
+    Licensed under the MIT license - http://opensource.org/licenses/MIT
+    Copyright (c) 2015 Daniel Eden
+  -->   
+  <link rel="stylesheet" href="assets/styles/lib/animate.css"/>  
+    
+  <link rel="stylesheet" href="assets/styles/custom/animations.css"/>
+    
+  <link rel="stylesheet" href="assets/styles/custom/styles.css"/>
+  <link rel="stylesheet" href="assets/styles/custom/basefontsize.css"/>
+  <link rel="stylesheet" href="assets/styles/custom/appcolors.css"/>
+
+</head>
+<body class="container-fluid">    
+    <!--  Place to load the views -->
+   <div class="page page-country"   ng-view> </div>       
+    
+    <!-- Scripts using CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.js"></script>
+    
+    <!-- App Specific scripts -->
+    <script src="app/app.module.js"></script>
+    
+    <script src="app/customer/customer.service.js"></script>
+    <script src="app/customer/customer.list.controller.js"></script>
+    <script src="app/customer/customer.add.edit.controller.js"></script>
+ 
+    
+</body>
+</html>
